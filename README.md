@@ -1,6 +1,6 @@
 # Spectre-II
 ## Description
-Spectre-II is a simple superscalar out-of-order RISC-V core able to execute up to 4 instructions per cycle and capable of booting Linux. 
+Spectre-II is a simple superscalar out-of-order RISC-V core able to execute up to 4 instructions per cycle and capable of booting Linux. It improves upon Spectre-I by including more aggresive branch prediction, more way superscalar processing, and LSU predictions. 
 
 ## Sample `strcmp` Execution (visualized using [Konata](https://github.com/shioyadan/Konata))
 ![Sample](https://user-images.githubusercontent.com/39701487/229142050-121ed8de-ae9b-4b49-b332-f6c7b5281daf.png)
