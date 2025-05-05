@@ -1,0 +1,335 @@
+// Verilated -*- C++ -*-
+// DESCRIPTION: Verilator output: Design internal header
+// See VTop.h for the primary calling header
+
+#ifndef VERILATED_VTOP_IFETCHPIPELINE_H_
+#define VERILATED_VTOP_IFETCHPIPELINE_H_  // guard
+
+#include "verilated.h"
+#include "verilated_threads.h"
+#include "verilated_save.h"
+
+
+class VTop__Syms;
+
+class alignas(VL_CACHE_LINE_BYTES) VTop_IFetchPipeline final : public VerilatedModule {
+  public:
+
+    // DESIGN SPECIFIC STATE
+    // Anonymous structures to workaround compiler member-count bugs
+    struct {
+        CData/*0:0*/ __Vcellinp__outFIFO__rst;
+        CData/*1:0*/ __PVT__outFIFO__DOT__indexOut;
+        CData/*1:0*/ __PVT__assocCnt;
+        CData/*0:0*/ __PVT__handlingMiss;
+        CData/*1:0*/ __PVT__outFIFO__DOT__indexIn;
+        CData/*0:0*/ __Vcellinp__itlb__clear;
+        CData/*1:0*/ __PVT__itlb__DOT__inc;
+        CData/*0:0*/ __PVT__itlb__DOT__ignoreCur;
+        CData/*0:0*/ __PVT__itlb__DOT__unnamedblk8__DOT__idx;
+        CData/*1:0*/ __PVT__itlb__DOT__unnamedblk8__DOT__assocIdx;
+        CData/*0:0*/ itlb__DOT____Vlvbound_hcb230f52__1;
+        CData/*0:0*/ itlb__DOT____Vlvbound_hcb223e82__1;
+        CData/*2:0*/ itlb__DOT____Vlvbound_hf4ef825e__0;
+        CData/*0:0*/ itlb__DOT____Vlvbound_hcb229d0c__0;
+        CData/*0:0*/ itlb__DOT____Vlvbound_hcb224d1f__0;
+        IData/*19:0*/ itlb__DOT____Vlvbound_hdeabf1e7__0;
+        VlUnpacked<IData/*20:0*/, 1> __Vcellinp__itlb__IN_rqs;
+        VlUnpacked<VlUnpacked<QData/*47:0*/, 4>, 2> __PVT__itlb__DOT__tlb;
+        VlUnpacked<CData/*1:0*/, 2> __PVT__itlb__DOT__counters;
+        CData/*1:0*/ __Vdly__outFIFO__DOT__indexOut;
+        VlUnpacked<VlWide<7>/*203:0*/, 4> __PVT__outFIFO__DOT__mem;
+        CData/*7:0*/ __PVT__instrAligner__DOT__isInstrStart_c;
+        CData/*7:0*/ instrAligner__DOT____Vlvbound_hd7591fb5__0;
+        CData/*7:0*/ instrAligner__DOT____Vlvbound_h4d56b7ca__0;
+        CData/*7:0*/ instrAligner__DOT____Vlvbound_hb894d813__0;
+        CData/*2:0*/ __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__0__KET____DOT__gen2__BRA__3__KET____DOT__redSum;
+        CData/*2:0*/ __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__1__KET____DOT__gen2__BRA__3__KET____DOT__redSum;
+        CData/*2:0*/ __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__2__KET____DOT__gen2__BRA__3__KET____DOT__redSum;
+        CData/*2:0*/ __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__3__KET____DOT__gen2__BRA__3__KET____DOT__redSum;
+        CData/*2:0*/ __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__4__KET____DOT__gen2__BRA__3__KET____DOT__redSum;
+        CData/*2:0*/ __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__5__KET____DOT__gen2__BRA__3__KET____DOT__redSum;
+        CData/*2:0*/ __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__6__KET____DOT__gen2__BRA__3__KET____DOT__redSum;
+        CData/*2:0*/ __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__7__KET____DOT__gen2__BRA__3__KET____DOT__redSum;
+        CData/*2:0*/ __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__8__KET____DOT__gen2__BRA__3__KET____DOT__redSum;
+        CData/*2:0*/ __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__9__KET____DOT__gen2__BRA__3__KET____DOT__redSum;
+        CData/*2:0*/ __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__10__KET____DOT__gen2__BRA__3__KET____DOT__redSum;
+        CData/*2:0*/ __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__11__KET____DOT__gen2__BRA__3__KET____DOT__redSum;
+        CData/*2:0*/ __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__12__KET____DOT__gen2__BRA__3__KET____DOT__redSum;
+        CData/*2:0*/ __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__13__KET____DOT__gen2__BRA__3__KET____DOT__redSum;
+        CData/*2:0*/ __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__14__KET____DOT__gen2__BRA__3__KET____DOT__redSum;
+        CData/*2:0*/ __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__15__KET____DOT__gen2__BRA__3__KET____DOT__redSum;
+        VlWide<7>/*204:0*/ instrAligner__DOT____Vlvbound_h3416e45f__0;
+        VlWide<7>/*203:0*/ __PVT__outFIFO__DOT__outDataReg;
+        VlWide<14>/*441:0*/ __PVT__instrAligner__DOT__prev_r;
+        VlUnpacked<CData/*3:0*/, 32> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__0__KET____DOT__s;
+        VlUnpacked<CData/*7:0*/, 16> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__s;
+        VlUnpacked<CData/*0:0*/, 2> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__0__KET____DOT__gen2__BRA__0__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 3> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__0__KET____DOT__gen2__BRA__1__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 4> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__0__KET____DOT__gen2__BRA__2__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 5> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__0__KET____DOT__gen2__BRA__3__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 2> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__1__KET____DOT__gen2__BRA__0__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 3> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__1__KET____DOT__gen2__BRA__1__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 4> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__1__KET____DOT__gen2__BRA__2__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 5> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__1__KET____DOT__gen2__BRA__3__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 2> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__2__KET____DOT__gen2__BRA__0__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 3> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__2__KET____DOT__gen2__BRA__1__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 4> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__2__KET____DOT__gen2__BRA__2__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 5> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__2__KET____DOT__gen2__BRA__3__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 2> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__3__KET____DOT__gen2__BRA__0__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 3> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__3__KET____DOT__gen2__BRA__1__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 4> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__3__KET____DOT__gen2__BRA__2__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 5> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__3__KET____DOT__gen2__BRA__3__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 2> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__4__KET____DOT__gen2__BRA__0__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 3> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__4__KET____DOT__gen2__BRA__1__KET____DOT__mux;
+    };
+    struct {
+        VlUnpacked<CData/*0:0*/, 4> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__4__KET____DOT__gen2__BRA__2__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 5> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__4__KET____DOT__gen2__BRA__3__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 2> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__5__KET____DOT__gen2__BRA__0__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 3> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__5__KET____DOT__gen2__BRA__1__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 4> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__5__KET____DOT__gen2__BRA__2__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 5> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__5__KET____DOT__gen2__BRA__3__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 2> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__6__KET____DOT__gen2__BRA__0__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 3> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__6__KET____DOT__gen2__BRA__1__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 4> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__6__KET____DOT__gen2__BRA__2__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 5> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__6__KET____DOT__gen2__BRA__3__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 2> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__7__KET____DOT__gen2__BRA__0__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 3> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__7__KET____DOT__gen2__BRA__1__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 4> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__7__KET____DOT__gen2__BRA__2__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 5> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__7__KET____DOT__gen2__BRA__3__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 2> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__8__KET____DOT__gen2__BRA__0__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 3> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__8__KET____DOT__gen2__BRA__1__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 4> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__8__KET____DOT__gen2__BRA__2__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 5> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__8__KET____DOT__gen2__BRA__3__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 2> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__9__KET____DOT__gen2__BRA__0__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 3> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__9__KET____DOT__gen2__BRA__1__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 4> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__9__KET____DOT__gen2__BRA__2__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 5> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__9__KET____DOT__gen2__BRA__3__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 2> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__10__KET____DOT__gen2__BRA__0__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 3> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__10__KET____DOT__gen2__BRA__1__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 4> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__10__KET____DOT__gen2__BRA__2__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 5> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__10__KET____DOT__gen2__BRA__3__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 2> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__11__KET____DOT__gen2__BRA__0__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 3> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__11__KET____DOT__gen2__BRA__1__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 4> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__11__KET____DOT__gen2__BRA__2__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 5> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__11__KET____DOT__gen2__BRA__3__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 2> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__12__KET____DOT__gen2__BRA__0__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 3> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__12__KET____DOT__gen2__BRA__1__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 4> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__12__KET____DOT__gen2__BRA__2__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 5> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__12__KET____DOT__gen2__BRA__3__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 2> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__13__KET____DOT__gen2__BRA__0__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 3> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__13__KET____DOT__gen2__BRA__1__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 4> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__13__KET____DOT__gen2__BRA__2__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 5> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__13__KET____DOT__gen2__BRA__3__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 2> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__14__KET____DOT__gen2__BRA__0__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 3> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__14__KET____DOT__gen2__BRA__1__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 4> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__14__KET____DOT__gen2__BRA__2__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 5> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__14__KET____DOT__gen2__BRA__3__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 2> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__15__KET____DOT__gen2__BRA__0__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 3> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__15__KET____DOT__gen2__BRA__1__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 4> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__15__KET____DOT__gen2__BRA__2__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 5> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__15__KET____DOT__gen2__BRA__3__KET____DOT__mux;
+        VlUnpacked<SData/*11:0*/, 8> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__2__KET____DOT__s;
+        VlUnpacked<CData/*1:0*/, 2> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__2__KET____DOT__genblk1__DOT__genblk1__BRA__0__KET____DOT__gen2__BRA__0__KET____DOT__mux;
+        VlUnpacked<CData/*1:0*/, 3> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__2__KET____DOT__genblk1__DOT__genblk1__BRA__0__KET____DOT__gen2__BRA__1__KET____DOT__mux;
+        VlUnpacked<CData/*1:0*/, 4> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__2__KET____DOT__genblk1__DOT__genblk1__BRA__0__KET____DOT__gen2__BRA__2__KET____DOT__mux;
+        VlUnpacked<CData/*1:0*/, 5> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__2__KET____DOT__genblk1__DOT__genblk1__BRA__0__KET____DOT__gen2__BRA__3__KET____DOT__mux;
+        VlUnpacked<CData/*1:0*/, 2> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__2__KET____DOT__genblk1__DOT__genblk1__BRA__1__KET____DOT__gen2__BRA__0__KET____DOT__mux;
+        VlUnpacked<CData/*1:0*/, 3> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__2__KET____DOT__genblk1__DOT__genblk1__BRA__1__KET____DOT__gen2__BRA__1__KET____DOT__mux;
+        VlUnpacked<CData/*1:0*/, 4> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__2__KET____DOT__genblk1__DOT__genblk1__BRA__1__KET____DOT__gen2__BRA__2__KET____DOT__mux;
+        VlUnpacked<CData/*1:0*/, 5> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__2__KET____DOT__genblk1__DOT__genblk1__BRA__1__KET____DOT__gen2__BRA__3__KET____DOT__mux;
+        VlUnpacked<CData/*1:0*/, 2> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__2__KET____DOT__genblk1__DOT__genblk1__BRA__2__KET____DOT__gen2__BRA__0__KET____DOT__mux;
+        VlUnpacked<CData/*1:0*/, 3> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__2__KET____DOT__genblk1__DOT__genblk1__BRA__2__KET____DOT__gen2__BRA__1__KET____DOT__mux;
+        VlUnpacked<CData/*1:0*/, 4> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__2__KET____DOT__genblk1__DOT__genblk1__BRA__2__KET____DOT__gen2__BRA__2__KET____DOT__mux;
+        VlUnpacked<CData/*1:0*/, 5> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__2__KET____DOT__genblk1__DOT__genblk1__BRA__2__KET____DOT__gen2__BRA__3__KET____DOT__mux;
+        VlUnpacked<CData/*1:0*/, 2> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__2__KET____DOT__genblk1__DOT__genblk1__BRA__3__KET____DOT__gen2__BRA__0__KET____DOT__mux;
+        VlUnpacked<CData/*1:0*/, 3> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__2__KET____DOT__genblk1__DOT__genblk1__BRA__3__KET____DOT__gen2__BRA__1__KET____DOT__mux;
+        VlUnpacked<CData/*1:0*/, 4> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__2__KET____DOT__genblk1__DOT__genblk1__BRA__3__KET____DOT__gen2__BRA__2__KET____DOT__mux;
+        VlUnpacked<CData/*1:0*/, 5> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__2__KET____DOT__genblk1__DOT__genblk1__BRA__3__KET____DOT__gen2__BRA__3__KET____DOT__mux;
+        VlUnpacked<CData/*1:0*/, 2> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__2__KET____DOT__genblk1__DOT__genblk1__BRA__4__KET____DOT__gen2__BRA__0__KET____DOT__mux;
+    };
+    struct {
+        VlUnpacked<CData/*1:0*/, 3> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__2__KET____DOT__genblk1__DOT__genblk1__BRA__4__KET____DOT__gen2__BRA__1__KET____DOT__mux;
+        VlUnpacked<CData/*1:0*/, 4> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__2__KET____DOT__genblk1__DOT__genblk1__BRA__4__KET____DOT__gen2__BRA__2__KET____DOT__mux;
+        VlUnpacked<CData/*1:0*/, 5> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__2__KET____DOT__genblk1__DOT__genblk1__BRA__4__KET____DOT__gen2__BRA__3__KET____DOT__mux;
+        VlUnpacked<CData/*1:0*/, 2> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__2__KET____DOT__genblk1__DOT__genblk1__BRA__5__KET____DOT__gen2__BRA__0__KET____DOT__mux;
+        VlUnpacked<CData/*1:0*/, 3> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__2__KET____DOT__genblk1__DOT__genblk1__BRA__5__KET____DOT__gen2__BRA__1__KET____DOT__mux;
+        VlUnpacked<CData/*1:0*/, 4> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__2__KET____DOT__genblk1__DOT__genblk1__BRA__5__KET____DOT__gen2__BRA__2__KET____DOT__mux;
+        VlUnpacked<CData/*1:0*/, 5> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__2__KET____DOT__genblk1__DOT__genblk1__BRA__5__KET____DOT__gen2__BRA__3__KET____DOT__mux;
+        VlUnpacked<CData/*1:0*/, 2> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__2__KET____DOT__genblk1__DOT__genblk1__BRA__6__KET____DOT__gen2__BRA__0__KET____DOT__mux;
+        VlUnpacked<CData/*1:0*/, 3> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__2__KET____DOT__genblk1__DOT__genblk1__BRA__6__KET____DOT__gen2__BRA__1__KET____DOT__mux;
+        VlUnpacked<CData/*1:0*/, 4> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__2__KET____DOT__genblk1__DOT__genblk1__BRA__6__KET____DOT__gen2__BRA__2__KET____DOT__mux;
+        VlUnpacked<CData/*1:0*/, 5> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__2__KET____DOT__genblk1__DOT__genblk1__BRA__6__KET____DOT__gen2__BRA__3__KET____DOT__mux;
+        VlUnpacked<CData/*1:0*/, 2> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__2__KET____DOT__genblk1__DOT__genblk1__BRA__7__KET____DOT__gen2__BRA__0__KET____DOT__mux;
+        VlUnpacked<CData/*1:0*/, 3> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__2__KET____DOT__genblk1__DOT__genblk1__BRA__7__KET____DOT__gen2__BRA__1__KET____DOT__mux;
+        VlUnpacked<CData/*1:0*/, 4> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__2__KET____DOT__genblk1__DOT__genblk1__BRA__7__KET____DOT__gen2__BRA__2__KET____DOT__mux;
+        VlUnpacked<CData/*1:0*/, 5> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__2__KET____DOT__genblk1__DOT__genblk1__BRA__7__KET____DOT__gen2__BRA__3__KET____DOT__mux;
+        VlUnpacked<SData/*15:0*/, 4> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__3__KET____DOT__s;
+        VlUnpacked<CData/*2:0*/, 2> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__3__KET____DOT__genblk1__DOT__genblk1__BRA__0__KET____DOT__gen2__BRA__0__KET____DOT__mux;
+        VlUnpacked<CData/*2:0*/, 3> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__3__KET____DOT__genblk1__DOT__genblk1__BRA__0__KET____DOT__gen2__BRA__1__KET____DOT__mux;
+        VlUnpacked<CData/*2:0*/, 4> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__3__KET____DOT__genblk1__DOT__genblk1__BRA__0__KET____DOT__gen2__BRA__2__KET____DOT__mux;
+        VlUnpacked<CData/*2:0*/, 5> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__3__KET____DOT__genblk1__DOT__genblk1__BRA__0__KET____DOT__gen2__BRA__3__KET____DOT__mux;
+        VlUnpacked<CData/*2:0*/, 2> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__3__KET____DOT__genblk1__DOT__genblk1__BRA__1__KET____DOT__gen2__BRA__0__KET____DOT__mux;
+        VlUnpacked<CData/*2:0*/, 3> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__3__KET____DOT__genblk1__DOT__genblk1__BRA__1__KET____DOT__gen2__BRA__1__KET____DOT__mux;
+        VlUnpacked<CData/*2:0*/, 4> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__3__KET____DOT__genblk1__DOT__genblk1__BRA__1__KET____DOT__gen2__BRA__2__KET____DOT__mux;
+        VlUnpacked<CData/*2:0*/, 5> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__3__KET____DOT__genblk1__DOT__genblk1__BRA__1__KET____DOT__gen2__BRA__3__KET____DOT__mux;
+        VlUnpacked<CData/*2:0*/, 2> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__3__KET____DOT__genblk1__DOT__genblk1__BRA__2__KET____DOT__gen2__BRA__0__KET____DOT__mux;
+        VlUnpacked<CData/*2:0*/, 3> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__3__KET____DOT__genblk1__DOT__genblk1__BRA__2__KET____DOT__gen2__BRA__1__KET____DOT__mux;
+        VlUnpacked<CData/*2:0*/, 4> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__3__KET____DOT__genblk1__DOT__genblk1__BRA__2__KET____DOT__gen2__BRA__2__KET____DOT__mux;
+        VlUnpacked<CData/*2:0*/, 5> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__3__KET____DOT__genblk1__DOT__genblk1__BRA__2__KET____DOT__gen2__BRA__3__KET____DOT__mux;
+        VlUnpacked<CData/*2:0*/, 2> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__3__KET____DOT__genblk1__DOT__genblk1__BRA__3__KET____DOT__gen2__BRA__0__KET____DOT__mux;
+        VlUnpacked<CData/*2:0*/, 3> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__3__KET____DOT__genblk1__DOT__genblk1__BRA__3__KET____DOT__gen2__BRA__1__KET____DOT__mux;
+        VlUnpacked<CData/*2:0*/, 4> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__3__KET____DOT__genblk1__DOT__genblk1__BRA__3__KET____DOT__gen2__BRA__2__KET____DOT__mux;
+        VlUnpacked<CData/*2:0*/, 5> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__3__KET____DOT__genblk1__DOT__genblk1__BRA__3__KET____DOT__gen2__BRA__3__KET____DOT__mux;
+        VlUnpacked<IData/*19:0*/, 2> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__4__KET____DOT__s;
+        VlUnpacked<CData/*3:0*/, 2> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__4__KET____DOT__genblk1__DOT__genblk1__BRA__0__KET____DOT__gen2__BRA__0__KET____DOT__mux;
+        VlUnpacked<CData/*3:0*/, 3> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__4__KET____DOT__genblk1__DOT__genblk1__BRA__0__KET____DOT__gen2__BRA__1__KET____DOT__mux;
+        VlUnpacked<CData/*3:0*/, 4> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__4__KET____DOT__genblk1__DOT__genblk1__BRA__0__KET____DOT__gen2__BRA__2__KET____DOT__mux;
+        VlUnpacked<CData/*3:0*/, 5> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__4__KET____DOT__genblk1__DOT__genblk1__BRA__0__KET____DOT__gen2__BRA__3__KET____DOT__mux;
+        VlUnpacked<CData/*3:0*/, 2> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__4__KET____DOT__genblk1__DOT__genblk1__BRA__1__KET____DOT__gen2__BRA__0__KET____DOT__mux;
+        VlUnpacked<CData/*3:0*/, 3> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__4__KET____DOT__genblk1__DOT__genblk1__BRA__1__KET____DOT__gen2__BRA__1__KET____DOT__mux;
+        VlUnpacked<CData/*3:0*/, 4> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__4__KET____DOT__genblk1__DOT__genblk1__BRA__1__KET____DOT__gen2__BRA__2__KET____DOT__mux;
+        VlUnpacked<CData/*3:0*/, 5> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__4__KET____DOT__genblk1__DOT__genblk1__BRA__1__KET____DOT__gen2__BRA__3__KET____DOT__mux;
+        VlUnpacked<IData/*23:0*/, 1> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__5__KET____DOT__s;
+        VlUnpacked<CData/*4:0*/, 2> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__5__KET____DOT__genblk1__DOT__genblk1__BRA__0__KET____DOT__gen2__BRA__0__KET____DOT__mux;
+        VlUnpacked<CData/*4:0*/, 3> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__5__KET____DOT__genblk1__DOT__genblk1__BRA__0__KET____DOT__gen2__BRA__1__KET____DOT__mux;
+        VlUnpacked<CData/*4:0*/, 4> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__5__KET____DOT__genblk1__DOT__genblk1__BRA__0__KET____DOT__gen2__BRA__2__KET____DOT__mux;
+        VlUnpacked<CData/*4:0*/, 5> __PVT__instrAligner__DOT__penc__DOT__gen__BRA__5__KET____DOT__genblk1__DOT__genblk1__BRA__0__KET____DOT__gen2__BRA__3__KET____DOT__mux;
+        CData/*0:0*/ __PVT__IA_ready;
+        CData/*7:0*/ __PVT__instrAligner__DOT__isInstrStart32_c;
+        CData/*0:0*/ __PVT__instrAligner__DOT__middleIsSplit32;
+        CData/*0:0*/ __PVT__outFIFO__DOT__outValidReg;
+        IData/*23:0*/ __PVT__instrAligner__DOT__windowStart_c;
+        IData/*23:0*/ __PVT__instrAligner__DOT__unhandled_c;
+        VlUnpacked<CData/*4:0*/, 4> __PVT__instrAligner__DOT__pencIdx;
+        VlUnpacked<CData/*0:0*/, 4> __PVT__instrAligner__DOT__pencIdxValid;
+        VlWide<7>/*204:0*/ packetRePred;
+        CData/*0:0*/ __PVT__outFIFO__DOT__outputReady;
+        CData/*0:0*/ __PVT__outFIFO__DOT__doExtract;
+        CData/*0:0*/ __PVT__outFIFO__DOT__doInsert;
+        VlWide<21>/*662:0*/ __PVT__instrAligner__DOT__cycles_c;
+        CData/*0:0*/ __PVT__outFIFO__DOT__fullCond;
+        CData/*0:0*/ __PVT__outFIFO__DOT__equal;
+        VlWide<12>/*383:0*/ __PVT__instrAligner__DOT__window_c;
+        IData/*23:0*/ __PVT__instrAligner__DOT__windowStart32_c;
+        QData/*48:0*/ __PVT__BH_decBranch;
+    };
+    struct {
+        CData/*4:0*/ __Vdly__fetchID;
+        CData/*1:0*/ __Vdly__flushState;
+        CData/*1:0*/ __Vdly__flushAssocIter;
+        CData/*5:0*/ __Vdly__flushAddrIter;
+        VlUnpacked<IData/*27:0*/, 1> __Vcellout__itlb__OUT_res;
+        VL_OUT8(__PVT__OUT_stall,0,0);
+        CData/*0:0*/ __PVT__outFIFO__DOT__empty;
+        CData/*0:0*/ __PVT__cacheMiss;
+        CData/*0:0*/ __PVT__tlbMiss;
+        CData/*4:0*/ fetchID;
+        CData/*1:0*/ __PVT__flushState;
+        CData/*1:0*/ __PVT__flushAssocIter;
+        CData/*5:0*/ __PVT__flushAddrIter;
+        VlWide<4>/*119:0*/ fetch0;
+        CData/*0:0*/ __PVT__pageFault;
+        CData/*1:0*/ __Vfunc_CheckTransfersIF__0__Vfuncout;
+        CData/*1:0*/ __Vfunc_CheckTransfersIF__0__rv;
+        CData/*1:0*/ __Vfunc_CheckTransfersIF__1__Vfuncout;
+        CData/*1:0*/ __Vfunc_CheckTransfersIF__1__rv;
+        IData/*31:0*/ __Vfunc_CheckTransfersIF__0__addr;
+        IData/*31:0*/ __Vfunc_CheckTransfersIF__1__addr;
+        VL_OUT64(__PVT__OUT_pw,54,0);
+        QData/*54:0*/ __PVT__OUT_pw_c;
+        VlWide<8>/*224:0*/ __Vfunc_CheckTransfersIF__0__memcReq;
+        VlWide<18>/*558:0*/ __Vfunc_CheckTransfersIF__0__memcRes;
+        VlWide<8>/*224:0*/ __Vfunc_CheckTransfersIF__1__memcReq;
+        VlWide<18>/*558:0*/ __Vfunc_CheckTransfersIF__1__memcRes;
+        VL_OUTW(__PVT__OUT_memc,224,0,8);
+        VlWide<8>/*224:0*/ __PVT__OUT_memc_c;
+        CData/*2:0*/ __PVT__assocHit;
+        VlWide<4>/*127:0*/ __PVT__assocHitInstrs;
+        IData/*31:0*/ __PVT__phyPC;
+        CData/*0:0*/ __PVT__instrAligner__DOT__outputReady;
+        VL_OUT64(__PVT__OUT_fetchBranch,48,0);
+        VL_OUTW(__PVT__OUT_instrs[4],109,0,4);
+        VlUnpacked<VlWide<4>/*109:0*/, 4> __PVT__instrAligner__DOT__instr_c;
+        CData/*3:0*/ __PVT__assocHitUnary_c;
+        CData/*1:0*/ __Vcellout__assocEnc____pinNumber2;
+        VL_OUTW(__PVT__OUT_btUpdate,75,0,3);
+        SData/*15:0*/ __PVT__branchHandler__DOT__lastInstr;
+        VlWide<5>/*143:0*/ __PVT__branchHandler__DOT__instrsView;
+        VlUnpacked<IData/*31:0*/, 9> __PVT__branchHandler__DOT__pc;
+        VlWide<3>/*75:0*/ __PVT__branchHandler__DOT__btUpdate_c;
+        VlUnpacked<IData/*31:0*/, 9> __PVT__branchHandler__DOT__CJ_target;
+        VlUnpacked<IData/*31:0*/, 9> __PVT__branchHandler__DOT__CB_target;
+        CData/*0:0*/ __PVT__branchHandler__DOT__endOffsValid;
+        CData/*2:0*/ __PVT__branchHandler__DOT__endOffs;
+        CData/*2:0*/ __PVT__branchHandler__DOT__newPredPos_c;
+        CData/*0:0*/ __PVT__branchHandler__DOT__newPredTaken_c;
+        QData/*36:0*/ __PVT__branchHandler__DOT__retUpd_c;
+        QData/*48:0*/ __PVT__branchHandler__DOT__decBranch_c;
+        VlWide<4>/*119:0*/ fetch1;
+        VlWide<7>/*204:0*/ __PVT__packet;
+        IData/*27:0*/ __PVT__TLB_res;
+        CData/*0:0*/ __PVT__branchHandler__DOT__unnamedblk13__DOT__unnamedblk14__DOT__unnamedblk15__DOT__predIllegal;
+        CData/*2:0*/ __PVT__branchHandler__DOT__unnamedblk13__DOT__unnamedblk14__DOT__unnamedblk16__DOT__actualOffs;
+        CData/*0:0*/ __PVT__branchHandler__DOT__unnamedblk13__DOT__unnamedblk14__DOT__unnamedblk16__DOT__dirOnly;
+        CData/*0:0*/ __PVT__branchHandler__DOT__unnamedblk13__DOT__unnamedblk14__DOT__unnamedblk16__DOT__dirOnlyTaken;
+        CData/*0:0*/ __PVT__branchHandler__DOT__unnamedblk13__DOT__unnamedblk14__DOT__unnamedblk17__DOT__predIllegal;
+        SData/*15:0*/ __PVT__branchHandler__DOT__unnamedblk9__DOT__unnamedblk10__DOT__i16;
+        IData/*31:0*/ __PVT__branchHandler__DOT__unnamedblk11__DOT__unnamedblk12__DOT__i32;
+        VlUnpacked<IData/*31:0*/, 8> __PVT__branchHandler__DOT__J_target;
+        VlUnpacked<IData/*31:0*/, 8> __PVT__branchHandler__DOT__B_target;
+        VlUnpacked<VlWide<4>/*100:0*/, 8> __PVT__branchHandler__DOT__branch;
+    };
+    struct {
+        CData/*0:0*/ __PVT__branchHandler__DOT__lastInstrValid;
+        CData/*2:0*/ __PVT__branchHandler__DOT__firstValid;
+        SData/*8:0*/ __PVT__branchHandler__DOT__is32bit;
+        VL_OUT8(__PVT__OUT_pcFileWE,0,0);
+        CData/*0:0*/ __PVT__unnamedblk4__DOT__flushDone;
+        CData/*1:0*/ __PVT__unnamedblk4__DOT__nextFlushAssoc;
+        CData/*5:0*/ __PVT__unnamedblk4__DOT__nextFlushAddr;
+        CData/*3:0*/ __PVT__branchHandler__DOT__unnamedblk18__DOT__lastIdx;
+        IData/*31:0*/ __PVT__branchHandler__DOT__lastInstrPC;
+        VL_OUT64(__PVT__OUT_pcFileEntry,34,0);
+        VlWide<4>/*119:0*/ __Vdly__fetch1;
+        VL_OUT64(__PVT__OUT_retUpdate,36,0);
+        VL_OUT8(__PVT__OUT_pcFileAddr,4,0);
+        VL_IN8(__PVT__clk,0,0);
+        VL_IN8(__PVT__rst,0,0);
+        VL_IN8(__PVT__IN_MEM_busy,0,0);
+        VL_IN8(__PVT__IN_mispr,0,0);
+        VL_IN8(__PVT__IN_misprFetchID,4,0);
+        VL_IN8(__PVT__IN_ROB_curFetchID,4,0);
+        VL_IN8(__PVT__IN_BP_fetchLimit,5,0);
+        VL_IN8(__PVT__IN_rIdx,4,0);
+        VL_IN8(__PVT__IN_lastValid,2,0);
+        VL_OUT8(__PVT__OUT_bpFileWE,0,0);
+        VL_OUT8(__PVT__OUT_bpFileAddr,4,0);
+        VL_IN8(__PVT__IN_ready,0,0);
+        VL_IN8(__PVT__IN_clearICache,0,0);
+        VL_IN8(__PVT__IN_flushTLB,0,0);
+        VL_IN(__PVT__IN_lateRetAddr,30,0);
+        VL_IN(__PVT__IN_vmem,30,0);
+        VL_INW(__PVT__IN_ifetchOp,119,0,4);
+        VL_IN64(__PVT__IN_predBranch,40,0);
+        VL_IN64(__PVT__IN_pw,52,0);
+        VL_INW(__PVT__IN_memc,558,0,18);
+    };
+
+    // INTERNAL VARIABLES
+    VTop__Syms* const vlSymsp;
+
+    // CONSTRUCTORS
+    VTop_IFetchPipeline(VTop__Syms* symsp, const char* v__name);
+    ~VTop_IFetchPipeline();
+    VL_UNCOPYABLE(VTop_IFetchPipeline);
+
+    // INTERNAL METHODS
+    void __Vconfigure(bool first);
+    void __Vserialize(VerilatedSerialize& os);
+    void __Vdeserialize(VerilatedDeserialize& os);
+};
+
+
+#endif  // guard

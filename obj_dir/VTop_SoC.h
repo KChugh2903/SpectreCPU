@@ -1,0 +1,343 @@
+// Verilated -*- C++ -*-
+// DESCRIPTION: Verilator output: Design internal header
+// See VTop.h for the primary calling header
+
+#ifndef VERILATED_VTOP_SOC_H_
+#define VERILATED_VTOP_SOC_H_  // guard
+
+#include "verilated.h"
+#include "verilated_threads.h"
+#include "verilated_save.h"
+class VTop_Core;
+class VTop_IF_CTable;
+class VTop_IF_Cache;
+class VTop_IF_ICTable;
+class VTop_IF_ICache;
+class VTop_IF_MMIO;
+class VTop_MemRTL1RW__W2_N40_WB2;
+class VTop_MemRTL1RW__W54_N40_WB15;
+class VTop_MemRTL__W200_N100_WB80;
+class VTop_MemRTL__W200_N40;
+
+
+class VTop__Syms;
+
+class alignas(VL_CACHE_LINE_BYTES) VTop_SoC final : public VerilatedModule {
+  public:
+    // CELLS
+    VTop_IF_Cache* __PVT__IF_cache;
+    VTop_IF_CTable* __PVT__IF_ct;
+    VTop_IF_MMIO* __PVT__IF_mmio;
+    VTop_IF_ICache* __PVT__IF_icache;
+    VTop_IF_ICTable* __PVT__IF_ict;
+    VTop_Core* core;
+    VTop_MemRTL1RW__W54_N40_WB15* ictable;
+    VTop_MemRTL__W200_N100_WB80* icache;
+    VTop_MemRTL__W200_N40* genblk1__BRA__0__KET____DOT__dcache;
+    VTop_MemRTL__W200_N40* genblk1__BRA__1__KET____DOT__dcache;
+    VTop_MemRTL__W200_N40* genblk1__BRA__2__KET____DOT__dcache;
+    VTop_MemRTL__W200_N40* genblk1__BRA__3__KET____DOT__dcache;
+    VTop_MemRTL1RW__W54_N40_WB15* genblk3__BRA__0__KET____DOT__dctable;
+    VTop_MemRTL1RW__W2_N40_WB2* genblk3__BRA__0__KET____DOT__dctableCnt;
+    VTop_MemRTL1RW__W54_N40_WB15* genblk3__BRA__1__KET____DOT__dctable;
+    VTop_MemRTL1RW__W2_N40_WB2* genblk3__BRA__1__KET____DOT__dctableCnt;
+    VTop_MemRTL1RW__W54_N40_WB15* genblk3__BRA__2__KET____DOT__dctable;
+    VTop_MemRTL1RW__W2_N40_WB2* genblk3__BRA__2__KET____DOT__dctableCnt;
+
+    // DESIGN SPECIFIC STATE
+    // Anonymous structures to workaround compiler member-count bugs
+    struct {
+        VlWide<18>/*558:0*/ MemC_stat;
+        VL_OUT8(__PVT__s_axi_wvalid,0,0);
+        CData/*0:0*/ __PVT__memc__DOT__dcacheReadIF__DOT__accIdx_r;
+        CData/*0:0*/ __PVT__memc__DOT__dcacheReadIF__DOT__accIdx_c;
+        CData/*0:0*/ __PVT__memc__DOT__dcacheReadIF__DOT__doAcc;
+        CData/*0:0*/ __PVT__memc__DOT__dcacheReadIF__DOT__fifo__DOT__fullCond;
+        CData/*0:0*/ __PVT__memc__DOT__dcacheReadIF__DOT__fifo__DOT__equal;
+        CData/*0:0*/ __PVT__memc__DOT__dcacheReadIF__DOT__fifo__DOT__empty;
+        CData/*0:0*/ __PVT__memc__DOT__dcacheReadIF__DOT__fifo__DOT__outputReady;
+        CData/*0:0*/ __PVT__memc__DOT__dcacheReadIF__DOT__fifo__DOT__doExtract;
+        CData/*0:0*/ __PVT__memc__DOT__dcacheReadIF__DOT__fifo__DOT__doInsert;
+        CData/*0:0*/ __PVT__memc__DOT__dcacheReadIF__DOT__fifo__DOT__outValidReg;
+        VlWide<4>/*127:0*/ __PVT__DC_dataOut;
+        VlWide<5>/*130:0*/ memc__DOT__dcacheReadIF__DOT____Vcellinp__fifo__IN_data;
+        VlWide<3>/*73:0*/ __PVT__memc__DOT__dcacheReadIF__DOT__readMetaSR;
+        VlUnpacked<SData/*11:0*/, 2> __PVT__MEMC_raddr;
+        VL_OUT8(__PVT__s_axi_wlast,0,0);
+        CData/*4:0*/ __PVT__memc__DOT__dcacheReadIF__DOT__fifo__DOT__indexIn;
+        CData/*4:0*/ __PVT__memc__DOT__dcacheReadIF__DOT__fifo__DOT__indexOut;
+        CData/*1:0*/ __PVT__memc__DOT__awFIFO__DOT__indexIn;
+        CData/*1:0*/ __PVT__memc__DOT__awFIFO__DOT__indexOut;
+        VL_OUT16(__PVT__s_axi_wstrb,15,0);
+        VL_OUTW(__PVT__s_axi_wdata,127,0,4);
+        VlWide<5>/*130:0*/ __PVT__memc__DOT__dcacheReadIF__DOT__fifo__DOT__outDataReg;
+        QData/*63:0*/ __PVT__memc__DOT__dcacheReadIF__DOT__cur;
+        QData/*63:0*/ __PVT__memc__DOT__dcacheReadIF__DOT__unnamedblk2__DOT__incoming;
+        VlUnpacked<VlWide<5>/*130:0*/, 32> __PVT__memc__DOT__dcacheReadIF__DOT__fifo__DOT__mem;
+        VlUnpacked<QData/*51:0*/, 4> __PVT__memc__DOT__awFIFO__DOT__mem;
+        CData/*1:0*/ __PVT__memc__DOT__DCR_reqTId;
+        CData/*7:0*/ __PVT__memc__DOT__DCR_reqLen;
+        CData/*0:0*/ __PVT__memc__DOT__DCR_reqMMIO;
+        CData/*0:0*/ __PVT__memc__DOT__dcacheReadIF__DOT__readSucc;
+        CData/*0:0*/ __PVT__memc__DOT__awFIFO__DOT__fullCond;
+        CData/*0:0*/ __PVT__memc__DOT__awFIFO__DOT__equal;
+        CData/*0:0*/ __PVT__memc__DOT__awFIFO__DOT__empty;
+        CData/*0:0*/ __PVT__memc__DOT__awFIFO__DOT__outputReady;
+        CData/*0:0*/ __PVT__memc__DOT__awFIFO__DOT__doExtract;
+        CData/*0:0*/ __PVT__memc__DOT__awFIFO__DOT__doInsert;
+        CData/*0:0*/ __PVT__memc__DOT__awFIFO__DOT__outValidReg;
+        CData/*0:0*/ __PVT__memc__DOT__awFIFO__DOT__combPassthru;
+        SData/*11:0*/ __PVT__memc__DOT__DCR_reqAddr;
+        IData/*31:0*/ __PVT__memc__DOT__DCR_reqMMIOData;
+        QData/*63:0*/ __PVT__memc__DOT__dcacheReadIF__DOT__next;
+        QData/*36:0*/ __PVT__memc__DOT__dcacheReadIF__DOT__readMeta;
+        QData/*51:0*/ __PVT__memc__DOT__awFIFO__DOT__outDataReg;
+        CData/*0:0*/ __PVT__memc__DOT__DCR_reqReady;
+        CData/*0:0*/ __PVT__memc__DOT__DCR_reqValid;
+        QData/*52:0*/ __PVT__memc__DOT__axiAW;
+        CData/*0:0*/ memc__DOT____Vcellout__dcacheWriteIF__OUT_CACHE_we;
+        CData/*0:0*/ memc__DOT____Vcellout__dcacheWriteIF__OUT_CACHE_ce;
+        CData/*0:0*/ __PVT__memc__DOT__awFIFO_outValid;
+        CData/*0:0*/ __PVT__memc__DOT__unnamedblk9__DOT__cID;
+        CData/*2:0*/ __PVT__dcacheArb__DOT__gen_banks__BRA__0__KET____DOT__reqUnary_r;
+        CData/*1:0*/ __PVT__dcacheArb__DOT__gen_banks__BRA__0__KET____DOT__reqUnary_w;
+        CData/*1:0*/ __PVT__dcacheArb__DOT__gen_banks__BRA__1__KET____DOT__reqUnary_w;
+        CData/*2:0*/ __PVT__dcacheArb__DOT__gen_banks__BRA__2__KET____DOT__reqUnary_r;
+        CData/*1:0*/ __PVT__dcacheArb__DOT__gen_banks__BRA__2__KET____DOT__reqUnary_w;
+        CData/*2:0*/ __PVT__dcacheArb__DOT__gen_banks__BRA__3__KET____DOT__reqUnary_r;
+        CData/*1:0*/ __PVT__dcacheArb__DOT__gen_banks__BRA__3__KET____DOT__reqUnary_w;
+        CData/*0:0*/ dcacheArb__DOT____Vlvbound_h06fbafee__0;
+        CData/*0:0*/ dcacheArb__DOT____Vlvbound_h55a4caa8__0;
+        SData/*11:0*/ memc__DOT____Vcellout__dcacheWriteIF__OUT_CACHE_addr;
+        SData/*11:0*/ __Vfunc_memc__DOT__GetCacheRdAddr__2__Vfuncout;
+        SData/*11:0*/ __Vfunc_memc__DOT__GetCacheRdAddr__3__Vfuncout;
+    };
+    struct {
+        VlWide<4>/*127:0*/ memc__DOT____Vcellout__dcacheWriteIF__OUT_CACHE_data;
+        QData/*51:0*/ memc__DOT____Vcellout__awFIFO__OUT_data;
+        VlWide<8>/*250:0*/ __Vfunc_memc__DOT__GetCacheRdAddr__2__t;
+        VlWide<8>/*250:0*/ __Vfunc_memc__DOT__GetCacheRdAddr__3__t;
+        VlUnpacked<VlWide<5>/*157:0*/, 2> __PVT__cacheWriteIFs;
+        VlUnpacked<CData/*0:0*/, 3> __PVT__cacheReadReady;
+        VlUnpacked<CData/*0:0*/, 2> __PVT__cacheWriteReady;
+        VlUnpacked<VlUnpacked<CData/*1:0*/, 2>, 4> __PVT__dcacheArb__DOT__reqIdx_r;
+        VlUnpacked<VlUnpacked<CData/*0:0*/, 2>, 4> __PVT__dcacheArb__DOT__reqIdxValid_r;
+        VlUnpacked<VlUnpacked<CData/*0:0*/, 1>, 4> __PVT__dcacheArb__DOT__reqIdx_w;
+        VlUnpacked<VlUnpacked<CData/*0:0*/, 1>, 4> __PVT__dcacheArb__DOT__reqIdxValid_w;
+        VlUnpacked<CData/*0:0*/, 2> dcacheArb__DOT____Vcellout__gen_banks__BRA__0__KET____DOT__penc_r____pinNumber3;
+        VlUnpacked<CData/*1:0*/, 2> dcacheArb__DOT____Vcellout__gen_banks__BRA__0__KET____DOT__penc_r____pinNumber2;
+        VlUnpacked<CData/*0:0*/, 1> dcacheArb__DOT____Vcellout__gen_banks__BRA__0__KET____DOT__penc_w____pinNumber3;
+        VlUnpacked<CData/*0:0*/, 1> dcacheArb__DOT____Vcellout__gen_banks__BRA__0__KET____DOT__penc_w____pinNumber2;
+        VlUnpacked<CData/*0:0*/, 1> dcacheArb__DOT____Vcellout__gen_banks__BRA__1__KET____DOT__penc_w____pinNumber3;
+        VlUnpacked<CData/*0:0*/, 1> dcacheArb__DOT____Vcellout__gen_banks__BRA__1__KET____DOT__penc_w____pinNumber2;
+        VlUnpacked<CData/*0:0*/, 2> dcacheArb__DOT____Vcellout__gen_banks__BRA__2__KET____DOT__penc_r____pinNumber3;
+        VlUnpacked<CData/*1:0*/, 2> dcacheArb__DOT____Vcellout__gen_banks__BRA__2__KET____DOT__penc_r____pinNumber2;
+        VlUnpacked<CData/*0:0*/, 1> dcacheArb__DOT____Vcellout__gen_banks__BRA__2__KET____DOT__penc_w____pinNumber3;
+        VlUnpacked<CData/*0:0*/, 1> dcacheArb__DOT____Vcellout__gen_banks__BRA__2__KET____DOT__penc_w____pinNumber2;
+        VlUnpacked<CData/*0:0*/, 2> dcacheArb__DOT____Vcellout__gen_banks__BRA__3__KET____DOT__penc_r____pinNumber3;
+        VlUnpacked<CData/*1:0*/, 2> dcacheArb__DOT____Vcellout__gen_banks__BRA__3__KET____DOT__penc_r____pinNumber2;
+        VlUnpacked<CData/*0:0*/, 1> dcacheArb__DOT____Vcellout__gen_banks__BRA__3__KET____DOT__penc_w____pinNumber3;
+        VlUnpacked<CData/*0:0*/, 1> dcacheArb__DOT____Vcellout__gen_banks__BRA__3__KET____DOT__penc_w____pinNumber2;
+        VlUnpacked<CData/*1:0*/, 4> __PVT__dcacheArb__DOT__gen_banks__BRA__0__KET____DOT__penc_r__DOT__gen__BRA__0__KET____DOT__s;
+        VlUnpacked<CData/*3:0*/, 2> __PVT__dcacheArb__DOT__gen_banks__BRA__0__KET____DOT__penc_r__DOT__gen__BRA__1__KET____DOT__s;
+        VlUnpacked<CData/*0:0*/, 2> __PVT__dcacheArb__DOT__gen_banks__BRA__0__KET____DOT__penc_r__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__0__KET____DOT__gen2__BRA__0__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 3> __PVT__dcacheArb__DOT__gen_banks__BRA__0__KET____DOT__penc_r__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__0__KET____DOT__gen2__BRA__1__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 2> __PVT__dcacheArb__DOT__gen_banks__BRA__0__KET____DOT__penc_r__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__1__KET____DOT__gen2__BRA__0__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 3> __PVT__dcacheArb__DOT__gen_banks__BRA__0__KET____DOT__penc_r__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__1__KET____DOT__gen2__BRA__1__KET____DOT__mux;
+        VlUnpacked<CData/*5:0*/, 1> __PVT__dcacheArb__DOT__gen_banks__BRA__0__KET____DOT__penc_r__DOT__gen__BRA__2__KET____DOT__s;
+        VlUnpacked<CData/*1:0*/, 2> __PVT__dcacheArb__DOT__gen_banks__BRA__0__KET____DOT__penc_r__DOT__gen__BRA__2__KET____DOT__genblk1__DOT__genblk1__BRA__0__KET____DOT__gen2__BRA__0__KET____DOT__mux;
+        VlUnpacked<CData/*1:0*/, 3> __PVT__dcacheArb__DOT__gen_banks__BRA__0__KET____DOT__penc_r__DOT__gen__BRA__2__KET____DOT__genblk1__DOT__genblk1__BRA__0__KET____DOT__gen2__BRA__1__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 2> __PVT__dcacheArb__DOT__gen_banks__BRA__0__KET____DOT__penc_w__DOT__gen__BRA__0__KET____DOT__s;
+        VlUnpacked<CData/*1:0*/, 1> __PVT__dcacheArb__DOT__gen_banks__BRA__0__KET____DOT__penc_w__DOT__gen__BRA__1__KET____DOT__s;
+        VlUnpacked<CData/*0:0*/, 2> __PVT__dcacheArb__DOT__gen_banks__BRA__0__KET____DOT__penc_w__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__0__KET____DOT__gen2__BRA__0__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 2> __PVT__dcacheArb__DOT__gen_banks__BRA__1__KET____DOT__penc_w__DOT__gen__BRA__0__KET____DOT__s;
+        VlUnpacked<CData/*1:0*/, 1> __PVT__dcacheArb__DOT__gen_banks__BRA__1__KET____DOT__penc_w__DOT__gen__BRA__1__KET____DOT__s;
+        VlUnpacked<CData/*0:0*/, 2> __PVT__dcacheArb__DOT__gen_banks__BRA__1__KET____DOT__penc_w__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__0__KET____DOT__gen2__BRA__0__KET____DOT__mux;
+        VlUnpacked<CData/*1:0*/, 4> __PVT__dcacheArb__DOT__gen_banks__BRA__2__KET____DOT__penc_r__DOT__gen__BRA__0__KET____DOT__s;
+        VlUnpacked<CData/*3:0*/, 2> __PVT__dcacheArb__DOT__gen_banks__BRA__2__KET____DOT__penc_r__DOT__gen__BRA__1__KET____DOT__s;
+        VlUnpacked<CData/*0:0*/, 2> __PVT__dcacheArb__DOT__gen_banks__BRA__2__KET____DOT__penc_r__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__0__KET____DOT__gen2__BRA__0__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 3> __PVT__dcacheArb__DOT__gen_banks__BRA__2__KET____DOT__penc_r__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__0__KET____DOT__gen2__BRA__1__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 2> __PVT__dcacheArb__DOT__gen_banks__BRA__2__KET____DOT__penc_r__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__1__KET____DOT__gen2__BRA__0__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 3> __PVT__dcacheArb__DOT__gen_banks__BRA__2__KET____DOT__penc_r__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__1__KET____DOT__gen2__BRA__1__KET____DOT__mux;
+        VlUnpacked<CData/*5:0*/, 1> __PVT__dcacheArb__DOT__gen_banks__BRA__2__KET____DOT__penc_r__DOT__gen__BRA__2__KET____DOT__s;
+        VlUnpacked<CData/*1:0*/, 2> __PVT__dcacheArb__DOT__gen_banks__BRA__2__KET____DOT__penc_r__DOT__gen__BRA__2__KET____DOT__genblk1__DOT__genblk1__BRA__0__KET____DOT__gen2__BRA__0__KET____DOT__mux;
+        VlUnpacked<CData/*1:0*/, 3> __PVT__dcacheArb__DOT__gen_banks__BRA__2__KET____DOT__penc_r__DOT__gen__BRA__2__KET____DOT__genblk1__DOT__genblk1__BRA__0__KET____DOT__gen2__BRA__1__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 2> __PVT__dcacheArb__DOT__gen_banks__BRA__2__KET____DOT__penc_w__DOT__gen__BRA__0__KET____DOT__s;
+        VlUnpacked<CData/*1:0*/, 1> __PVT__dcacheArb__DOT__gen_banks__BRA__2__KET____DOT__penc_w__DOT__gen__BRA__1__KET____DOT__s;
+        VlUnpacked<CData/*0:0*/, 2> __PVT__dcacheArb__DOT__gen_banks__BRA__2__KET____DOT__penc_w__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__0__KET____DOT__gen2__BRA__0__KET____DOT__mux;
+        VlUnpacked<CData/*1:0*/, 4> __PVT__dcacheArb__DOT__gen_banks__BRA__3__KET____DOT__penc_r__DOT__gen__BRA__0__KET____DOT__s;
+        VlUnpacked<CData/*3:0*/, 2> __PVT__dcacheArb__DOT__gen_banks__BRA__3__KET____DOT__penc_r__DOT__gen__BRA__1__KET____DOT__s;
+        VlUnpacked<CData/*0:0*/, 2> __PVT__dcacheArb__DOT__gen_banks__BRA__3__KET____DOT__penc_r__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__0__KET____DOT__gen2__BRA__0__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 3> __PVT__dcacheArb__DOT__gen_banks__BRA__3__KET____DOT__penc_r__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__0__KET____DOT__gen2__BRA__1__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 2> __PVT__dcacheArb__DOT__gen_banks__BRA__3__KET____DOT__penc_r__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__1__KET____DOT__gen2__BRA__0__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 3> __PVT__dcacheArb__DOT__gen_banks__BRA__3__KET____DOT__penc_r__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__1__KET____DOT__gen2__BRA__1__KET____DOT__mux;
+        VlUnpacked<CData/*5:0*/, 1> __PVT__dcacheArb__DOT__gen_banks__BRA__3__KET____DOT__penc_r__DOT__gen__BRA__2__KET____DOT__s;
+        VlUnpacked<CData/*1:0*/, 2> __PVT__dcacheArb__DOT__gen_banks__BRA__3__KET____DOT__penc_r__DOT__gen__BRA__2__KET____DOT__genblk1__DOT__genblk1__BRA__0__KET____DOT__gen2__BRA__0__KET____DOT__mux;
+        VlUnpacked<CData/*1:0*/, 3> __PVT__dcacheArb__DOT__gen_banks__BRA__3__KET____DOT__penc_r__DOT__gen__BRA__2__KET____DOT__genblk1__DOT__genblk1__BRA__0__KET____DOT__gen2__BRA__1__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 2> __PVT__dcacheArb__DOT__gen_banks__BRA__3__KET____DOT__penc_w__DOT__gen__BRA__0__KET____DOT__s;
+        VlUnpacked<CData/*1:0*/, 1> __PVT__dcacheArb__DOT__gen_banks__BRA__3__KET____DOT__penc_w__DOT__gen__BRA__1__KET____DOT__s;
+        VlUnpacked<CData/*0:0*/, 2> __PVT__dcacheArb__DOT__gen_banks__BRA__3__KET____DOT__penc_w__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__0__KET____DOT__gen2__BRA__0__KET____DOT__mux;
+    };
+    struct {
+        CData/*0:0*/ __PVT__memc__DOT__arFIFO__DOT__fullCond;
+        CData/*0:0*/ __PVT__memc__DOT__arFIFO__DOT__equal;
+        CData/*0:0*/ __PVT__memc__DOT__arFIFO__DOT__empty;
+        CData/*0:0*/ __PVT__memc__DOT__arFIFO__DOT__outputReady;
+        CData/*0:0*/ __PVT__memc__DOT__arFIFO__DOT__doExtract;
+        CData/*0:0*/ __PVT__memc__DOT__arFIFO__DOT__outValidReg;
+        QData/*52:0*/ __PVT__memc__DOT__axiAR;
+        CData/*0:0*/ __PVT__memc__DOT__arFIFO__DOT__doInsert;
+        CData/*0:0*/ __PVT__memc__DOT__arFIFO__DOT__indexIn;
+        CData/*0:0*/ __PVT__memc__DOT__arFIFO__DOT__indexOut;
+        QData/*51:0*/ __PVT__memc__DOT__arFIFO__DOT__outDataReg;
+        VlUnpacked<QData/*51:0*/, 2> __PVT__memc__DOT__arFIFO__DOT__mem;
+        QData/*63:0*/ __Vdly__mmio__DOT__aclint__DOT__mtime;
+        QData/*63:0*/ __PVT__mmio__DOT__aclint__DOT__mtime;
+        QData/*63:0*/ __PVT__mmio__DOT__aclint__DOT__mtimecmp;
+        VL_OUT8(__PVT__OUT_powerOff,0,0);
+        VL_OUT8(__PVT__OUT_reboot,0,0);
+        CData/*0:0*/ __PVT__memc__DOT__dcacheReadIF__DOT__FIFO_valid;
+        VlUnpacked<VlWide<16>/*511:0*/, 3> __PVT__cacheRData;
+        VlUnpacked<VlUnpacked<VlWide<16>/*511:0*/, 2>, 4> __PVT__bankRData;
+        VlUnpacked<VlUnpacked<VlWide<16>/*511:0*/, 2>, 4> __Vcellinp__dcacheArb__IN_portRData;
+        VlUnpacked<VlWide<16>/*511:0*/, 3> __Vcellout__dcacheArb__OUT_portRData;
+        VlUnpacked<VlWide<16>/*511:0*/, 3> __PVT__cacheRData_t;
+        VlUnpacked<VlUnpacked<SData/*9:0*/, 2>, 2> __PVT__CORE_raddr;
+        VlUnpacked<VlUnpacked<CData/*2:0*/, 3>, 2> __PVT__dcacheArb__DOT__readIdxs;
+        CData/*0:0*/ __PVT__mmio__DOT__aclintRValid;
+        IData/*31:0*/ __PVT__mmio__DOT__aclintData;
+        VlUnpacked<CData/*0:0*/, 3> __PVT__dcacheArb__DOT__outPortIdx;
+        CData/*0:0*/ memc__DOT____Vcellout__icacheWriteIF__OUT_CACHE_we;
+        CData/*0:0*/ memc__DOT____Vcellout__icacheWriteIF__OUT_CACHE_ce;
+        CData/*0:0*/ __PVT__memc__DOT__icacheWriteIF__DOT__writeLast;
+        CData/*1:0*/ __PVT__memc__DOT__icacheWriteIF__DOT__writeLastId;
+        CData/*0:0*/ __PVT__memc__DOT__dcacheWriteIF__DOT__writeLast;
+        CData/*1:0*/ __PVT__memc__DOT__dcacheWriteIF__DOT__writeLastId;
+        CData/*0:0*/ __PVT__memc__DOT__rFIFO__DOT__fullCond;
+        CData/*0:0*/ __PVT__memc__DOT__rFIFO__DOT__equal;
+        CData/*0:0*/ __PVT__memc__DOT__rFIFO__DOT__empty;
+        CData/*0:0*/ __PVT__memc__DOT__rFIFO__DOT__outputReady;
+        CData/*0:0*/ __PVT__memc__DOT__rFIFO__DOT__doExtract;
+        CData/*0:0*/ __PVT__memc__DOT__rFIFO__DOT__doInsert;
+        CData/*0:0*/ __PVT__memc__DOT__rFIFO__DOT__outValidReg;
+        SData/*11:0*/ memc__DOT____Vcellout__icacheWriteIF__OUT_CACHE_addr;
+        VlWide<4>/*127:0*/ memc__DOT____Vcellout__icacheWriteIF__OUT_CACHE_data;
+        VlWide<5>/*144:0*/ __PVT__memc__DOT__icacheWriteIF__DOT__cur_r;
+        VlWide<5>/*144:0*/ __PVT__memc__DOT__icacheWriteIF__DOT__cur_c;
+        VlWide<5>/*144:0*/ __PVT__memc__DOT__dcacheWriteIF__DOT__cur_r;
+        VlWide<5>/*144:0*/ __PVT__memc__DOT__dcacheWriteIF__DOT__cur_c;
+        CData/*4:0*/ __PVT__memc__DOT__rFIFO__DOT__indexIn;
+        CData/*4:0*/ __PVT__memc__DOT__rFIFO__DOT__indexOut;
+        CData/*0:0*/ __PVT__memc__DOT__rFIFO__DOT__combPassthru;
+        VlWide<5>/*130:0*/ memc__DOT____Vcellinp__rFIFO__IN_data;
+        VlWide<5>/*130:0*/ __PVT__memc__DOT__rFIFO__DOT__outDataReg;
+        CData/*4:0*/ __VdlyDim0__memc__DOT__rFIFO__DOT__mem__v0;
+        CData/*0:0*/ __VdlySet__memc__DOT__rFIFO__DOT__mem__v0;
+        VlWide<5>/*130:0*/ __VdlyVal__memc__DOT__rFIFO__DOT__mem__v0;
+        VlUnpacked<VlWide<5>/*130:0*/, 32> __PVT__memc__DOT__rFIFO__DOT__mem;
+        CData/*0:0*/ __PVT__memc__DOT__ICW_ackValid;
+        CData/*1:0*/ __PVT__memc__DOT__ICW_ackId;
+        CData/*0:0*/ __PVT__memc__DOT__DCW_ackValid;
+        CData/*1:0*/ __PVT__memc__DOT__DCW_ackId;
+        VL_OUT8(__PVT__s_axi_rready,0,0);
+        CData/*0:0*/ __PVT__memc__DOT__buf_rvalid;
+        CData/*0:0*/ __PVT__memc__DOT__buf_rready;
+        VlWide<5>/*130:0*/ memc__DOT____Vcellout__rFIFO__OUT_data;
+    };
+    struct {
+        CData/*1:0*/ __PVT__memc__DOT__arIdx;
+        CData/*0:0*/ __PVT__memc__DOT__DCR_cacheReadValid;
+        CData/*1:0*/ __PVT__memc__DOT__DCR_cacheReadId;
+        CData/*0:0*/ __PVT__memc__DOT__awFIFO_ready;
+        CData/*1:0*/ __PVT__memc__DOT__awIdx;
+        CData/*0:0*/ __PVT__memc__DOT__awIdxValid;
+        CData/*1:0*/ __PVT__memc__DOT__enqIdx;
+        CData/*7:0*/ memc__DOT____Vlvbound_h15ae7a35__0;
+        CData/*0:0*/ __PVT__memc__DOT__enqIdxValid;
+        SData/*12:0*/ __PVT__memc__DOT__sglStRes;
+        QData/*44:0*/ __PVT__memc__DOT__sglLdRes;
+        VlWide<6>/*160:0*/ __PVT__memc__DOT__ldDataFwd;
+        VlWide<8>/*224:0*/ __PVT__memc__DOT__selReq;
+        CData/*0:0*/ memc__DOT____Vlvbound_h8d33e052__0;
+        CData/*4:0*/ memc__DOT____Vlvbound_hcddad6bd__0;
+        CData/*0:0*/ memc__DOT____Vlvbound_h8cf1d8c4__0;
+        CData/*0:0*/ __Vfunc_memc__DOT__IsCacheOp__0__Vfuncout;
+        CData/*3:0*/ __Vfunc_memc__DOT__IsCacheOp__0__cmd;
+        CData/*0:0*/ __Vfunc_memc__DOT__IsCacheOp__1__Vfuncout;
+        CData/*3:0*/ __Vfunc_memc__DOT__IsCacheOp__1__cmd;
+        SData/*11:0*/ memc__DOT____Vlvbound_h8aeaf560__0;
+        IData/*31:0*/ memc__DOT____Vlvbound_h14e0abbb__0;
+        IData/*31:0*/ memc__DOT____Vlvbound_h1349bd51__0;
+        VlUnpacked<VlWide<8>/*224:0*/, 3> MemC_ctrl;
+        CData/*3:0*/ __PVT__memc__DOT__isMMIO;
+        VlUnpacked<VlWide<8>/*250:0*/, 4> __PVT__memc__DOT__transfers;
+        VlUnpacked<VlUnpacked<VlWide<5>/*157:0*/, 2>, 4> __PVT__bankIFs;
+        SData/*11:0*/ __PVT__genblk3__BRA__0__KET____DOT__dctAddr;
+        SData/*11:0*/ __PVT__genblk3__BRA__1__KET____DOT__dctAddr;
+        SData/*11:0*/ __PVT__genblk3__BRA__2__KET____DOT__dctAddr;
+        VlUnpacked<CData/*0:0*/, 2> dcacheArb__DOT____Vcellout__gen_banks__BRA__1__KET____DOT__penc_r____pinNumber3;
+        VlUnpacked<CData/*1:0*/, 2> dcacheArb__DOT____Vcellout__gen_banks__BRA__1__KET____DOT__penc_r____pinNumber2;
+        VlUnpacked<VlWide<5>/*157:0*/, 3> __PVT__cacheReadIFs;
+        CData/*2:0*/ __PVT__dcacheArb__DOT__gen_banks__BRA__1__KET____DOT__reqUnary_r;
+        VlUnpacked<CData/*1:0*/, 4> __PVT__dcacheArb__DOT__gen_banks__BRA__1__KET____DOT__penc_r__DOT__gen__BRA__0__KET____DOT__s;
+        VlUnpacked<CData/*3:0*/, 2> __PVT__dcacheArb__DOT__gen_banks__BRA__1__KET____DOT__penc_r__DOT__gen__BRA__1__KET____DOT__s;
+        VlUnpacked<CData/*0:0*/, 2> __PVT__dcacheArb__DOT__gen_banks__BRA__1__KET____DOT__penc_r__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__0__KET____DOT__gen2__BRA__0__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 3> __PVT__dcacheArb__DOT__gen_banks__BRA__1__KET____DOT__penc_r__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__0__KET____DOT__gen2__BRA__1__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 2> __PVT__dcacheArb__DOT__gen_banks__BRA__1__KET____DOT__penc_r__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__1__KET____DOT__gen2__BRA__0__KET____DOT__mux;
+        VlUnpacked<CData/*0:0*/, 3> __PVT__dcacheArb__DOT__gen_banks__BRA__1__KET____DOT__penc_r__DOT__gen__BRA__1__KET____DOT__genblk1__DOT__genblk1__BRA__1__KET____DOT__gen2__BRA__1__KET____DOT__mux;
+        VlUnpacked<CData/*5:0*/, 1> __PVT__dcacheArb__DOT__gen_banks__BRA__1__KET____DOT__penc_r__DOT__gen__BRA__2__KET____DOT__s;
+        VlUnpacked<CData/*1:0*/, 2> __PVT__dcacheArb__DOT__gen_banks__BRA__1__KET____DOT__penc_r__DOT__gen__BRA__2__KET____DOT__genblk1__DOT__genblk1__BRA__0__KET____DOT__gen2__BRA__0__KET____DOT__mux;
+        VlUnpacked<CData/*1:0*/, 3> __PVT__dcacheArb__DOT__gen_banks__BRA__1__KET____DOT__penc_r__DOT__gen__BRA__2__KET____DOT__genblk1__DOT__genblk1__BRA__0__KET____DOT__gen2__BRA__1__KET____DOT__mux;
+        VlWide<5>/*157:0*/ __PVT__MC_DC_rd;
+        VL_IN8(__PVT__clk,0,0);
+        VL_IN8(__PVT__rst,0,0);
+        VL_IN8(__PVT__en,0,0);
+        VL_IN8(__PVT__IN_irq,0,0);
+        VL_OUT8(__PVT__s_axi_awid,1,0);
+        VL_OUT8(__PVT__s_axi_awlen,7,0);
+        VL_OUT8(__PVT__s_axi_awsize,2,0);
+        VL_OUT8(__PVT__s_axi_awburst,1,0);
+        VL_OUT8(__PVT__s_axi_awlock,0,0);
+        VL_OUT8(__PVT__s_axi_awcache,3,0);
+        VL_OUT8(__PVT__s_axi_awvalid,0,0);
+        VL_IN8(__PVT__s_axi_awready,0,0);
+        VL_IN8(__PVT__s_axi_wready,0,0);
+        VL_OUT8(__PVT__s_axi_bready,0,0);
+        VL_IN8(__PVT__s_axi_bid,1,0);
+        VL_IN8(__PVT__s_axi_bvalid,0,0);
+        VL_OUT8(__PVT__s_axi_arid,1,0);
+        VL_OUT8(__PVT__s_axi_arlen,7,0);
+        VL_OUT8(__PVT__s_axi_arsize,2,0);
+        VL_OUT8(__PVT__s_axi_arburst,1,0);
+    };
+    struct {
+        VL_OUT8(__PVT__s_axi_arlock,0,0);
+        VL_OUT8(__PVT__s_axi_arcache,3,0);
+        VL_OUT8(__PVT__s_axi_arvalid,0,0);
+        VL_IN8(__PVT__s_axi_arready,0,0);
+        VL_IN8(__PVT__s_axi_rid,1,0);
+        VL_IN8(__PVT__s_axi_rlast,0,0);
+        VL_IN8(__PVT__s_axi_rvalid,0,0);
+        VL_OUT16(__PVT__OUT_dbgMemC,15,0);
+        VL_OUT(__PVT__s_axi_awaddr,31,0);
+        VL_OUT(__PVT__s_axi_araddr,31,0);
+        VL_INW(__PVT__s_axi_rdata,127,0,4);
+        VL_OUT64(__PVT__OUT_dbg,39,0);
+    };
+
+    // INTERNAL VARIABLES
+    VTop__Syms* const vlSymsp;
+
+    // CONSTRUCTORS
+    VTop_SoC(VTop__Syms* symsp, const char* v__name);
+    ~VTop_SoC();
+    VL_UNCOPYABLE(VTop_SoC);
+
+    // INTERNAL METHODS
+    void __Vconfigure(bool first);
+    void __Vserialize(VerilatedSerialize& os);
+    void __Vdeserialize(VerilatedDeserialize& os);
+};
+
+
+#endif  // guard
