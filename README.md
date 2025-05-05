@@ -42,11 +42,7 @@ at the last checkpoint, use e.g. `./obj_dir/VTop spectre.backup --backup-file=sp
 For a general overview of the implementation, see [Overview](docs/Overview.md).
 
 ## License
-<<<<<<< HEAD
 Spectre-II is released under the MIT License. Use of this source code is governed by a MIT-style license that can be found in the `LICENSE` file.
-=======
-spectre is released under the MIT License. Use of this source code is governed by a MIT-style license that can be found in the `LICENSE` file.
->>>>>>> 4b7e16f (Makefile modifications)
 
 ### External Source Code
 * `riscv-isa-sim` (aka `Spike`): released under the 3-Clause BSD License, used in conjunction with the simulator.
