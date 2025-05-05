@@ -1,9 +1,6 @@
 # SoomRV
 ## Description
-SoomRV is a simple superscalar out-of-order RISC-V core able to execute up to 4 instructions per cycle and capable of booting Linux. Check the latest CI logs to see a Linux boot log!
-
-For running SoomRV on FPGA, have a look at the [SoomRV-Arty Repo](https://github.com/mathis-s/SoomRV-Arty).
-## Basic Architecture
+Spectre-II is a simple superscalar out-of-order RISC-V core able to execute up to 4 instructions per cycle and capable of booting Linux. 
 <img src="https://github.com/mathis-s/SoomRV/assets/39701487/908afb93-b8b7-4bad-80b5-7cc20fa375cf.png" width="800" />
 
 ## Sample `strcmp` Execution (visualized using [Konata](https://github.com/shioyadan/Konata))
