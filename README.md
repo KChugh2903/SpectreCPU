@@ -1,4 +1,4 @@
-# SoomRV
+# Spectre-II
 ## Description
 Spectre-II is a simple superscalar out-of-order RISC-V core able to execute up to 4 instructions per cycle and capable of booting Linux. 
 <img src="https://github.com/mathis-s/SoomRV/assets/39701487/908afb93-b8b7-4bad-80b5-7cc20fa375cf.png" width="800" />
