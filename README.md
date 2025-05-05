@@ -35,11 +35,7 @@ end with `.backup`. If cosim is enabled, a matching `.backup_cosim` file will
 be written/read as well.
 
 This is on by default for `make linux`. To restart a crashed or closed Linux boot
-<<<<<<< HEAD
-at the last checkpoint, use e.g. `./obj_dir/VTop spectreii.backup --backup-file=spectreii2.backup`.
-=======
 at the last checkpoint, use e.g. `./obj_dir/VTop spectre.backup --backup-file=spectre2.backup`.
->>>>>>> 4b7e16f (Makefile modifications)
 (There seem to be some spurious segfaults in the Verilator-generated code.)
 
 ## Documentation
