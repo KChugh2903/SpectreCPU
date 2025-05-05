@@ -35,14 +35,14 @@ end with `.backup`. If cosim is enabled, a matching `.backup_cosim` file will
 be written/read as well.
 
 This is on by default for `make linux`. To restart a crashed or closed Linux boot
-at the last checkpoint, use e.g. `./obj_dir/VTop soomrv.backup --backup-file=soomrv2.backup`.
+at the last checkpoint, use e.g. `./obj_dir/VTop spectreii.backup --backup-file=spectreii2.backup`.
 (There seem to be some spurious segfaults in the Verilator-generated code.)
 
 ## Documentation
 For a general overview of the implementation, see [Overview](docs/Overview.md).
 
 ## License
-SoomRV is released under the MIT License. Use of this source code is governed by a MIT-style license that can be found in the `LICENSE` file.
+Spectre-II is released under the MIT License. Use of this source code is governed by a MIT-style license that can be found in the `LICENSE` file.
 
 ### External Source Code
 * `riscv-isa-sim` (aka `Spike`): released under the 3-Clause BSD License, used in conjunction with the simulator.
