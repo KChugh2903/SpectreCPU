@@ -111,18 +111,18 @@ SRC_FILES = \
 	hardfloat/mulRecFN.v \
 	hardfloat/HardFloat_rawFN.v
 
-.PHONY: soomrv
-soomrv: $(SLANG_HEADER_OUTPUT)
+.PHONY: spectre
+spectre: $(SLANG_HEADER_OUTPUT)
 	verilator $(VERILATOR_FLAGS) $(VERILATOR_CFG) $(SRC_FILES)
 
 .PHONY: linux
-linux: soomrv
+linux: spectre
 	make -C test_programs/linux
-	./obj_dir/VTop --device-tree=test_programs/linux/device_tree.dtb --backup-file=soomrv.backup test_programs/linux/linux_image.elf
+	./obj_dir/VTop --device-tree=test_programs/linux/device_tree.dtb --backup-file=spectre.backup test_programs/linux/linux_image.elf
 
 .PHONY: trace
 trace: VERILATOR_FLAGS += $(VERILATOR_TRACE_FLAGS)
-trace: soomrv
+trace: spectre
 
 .PHONY: setup
 setup:

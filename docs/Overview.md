@@ -1,16 +1,16 @@
 # General
-SoomRV is a tag-based OoO architecture. During rename, every instruction that writes to an architectural (i.e. virtual) register is given a tag. This tag is used both as the destination register
+spectre is a tag-based OoO architecture. During rename, every instruction that writes to an architectural (i.e. virtual) register is given a tag. This tag is used both as the destination register
 for the instruction itself, and as a source register for all instructions depending on the computed value. A tag is freed again only once a new instruction writing to the same virtual register commits. The current speculative as well as committed mappings from virtual to physical registers are stored in the [RenameTable](../src/RenameTable.sv).
 
 After instructions are renamed, they await their execution in various issue queues. Within issue queues, availability of instruction operands is tracked using the operands' tags. Once all operands are available, the instruction is issued, even if older instructions are still waiting.
 The actual value of operands is not kept within IQs yet (except immediates). Operand registers are only loaded in the following "Load" pipeline stage after the instruction is issued.
 
-Instructions are executed speculatively and out of order. As such, a recovery mechanism is required in case a misspeculation is made. SoomRV uses a reorder buffer to track all post-rename instructions. If a misspeculation occurs, a global `branch` signal fires. This signal invalidates all post-misspeculation in-flight instructions at every stage in the pipeline and in the ROB. To check whether a given instruction came before or after the misspeculation, every instruction carries a sequence number.
+Instructions are executed speculatively and out of order. As such, a recovery mechanism is required in case a misspeculation is made. spectre uses a reorder buffer to track all post-rename instructions. If a misspeculation occurs, a global `branch` signal fires. This signal invalidates all post-misspeculation in-flight instructions at every stage in the pipeline and in the ROB. To check whether a given instruction came before or after the misspeculation, every instruction carries a sequence number.
 
-Additionally, after misspeculation, recovery of rename state is necessary. In SoomRV, rename state is reset to committed state when a misspeculation fires. Then, not-yet-committed instructions are "re-played" from the ROB to recover the last correct rename state. (Another possible approach would be snapshotting rename state in every cycle.)
+Additionally, after misspeculation, recovery of rename state is necessary. In spectre, rename state is reset to committed state when a misspeculation fires. Then, not-yet-committed instructions are "re-played" from the ROB to recover the last correct rename state. (Another possible approach would be snapshotting rename state in every cycle.)
 
 # UOps
-Most of SoomRV is built around different Modules passing various `UOp` or other structs between them.
+Most of spectre is built around different Modules passing various `UOp` or other structs between them.
 The definitions for these structs (and other data types) are in [src/Include.sv](../src/Include.sv).
 Shown below is `EX_UOp` ("Execute-UOp"), which is the UOp that functional units are given in the execute pipeline stage.
 
@@ -75,7 +75,7 @@ In addition, the ROB will access PCFile using an instructions's `fetchID` if the
 
 
 # Modules
-What follows are short descriptions of some important modules in SoomRV.
+What follows are short descriptions of some important modules in spectre.
 Most of the following modules are themselves instantiated within the [Core](../src/Core.sv) module.
 
 ### [IFetch](../src/IFetch.sv)
@@ -99,7 +99,7 @@ PreDecode is a buffer, and also splits IFetch's instruction bundles into one or 
 The individual instructions are then distributed to decoder ports.
 
 ### [InstrDecoder](../src/InstrDecoder.sv)
-In the decoder, RISC-V's instruction format is decoded to SoomRV's internal format.
+In the decoder, RISC-V's instruction format is decoded to spectre's internal format.
 
 ### [Rename](../src/Rename.sv)
 In the Rename module, we assign `sqN`s and `tagDst` to instructions. Operand registers are also renamed to corresponding tags using the RenameTable.
@@ -160,5 +160,5 @@ The BLSU handles external MMIO. Instead of reading cache, it communicates with t
 
 ### [MemoryController](../src/MemoryController.sv)
 The memory controller handles transfers of cache lines between cache and main memory.
-Unlike all other modules, it is implemented outside of the SoomRV `Core` module.
+Unlike all other modules, it is implemented outside of the spectre `Core` module.
 Currently, a custom 32-bit bidirectional memory bus is used, which was implemented because of limited IO count on the OpenMPW shuttles. This bus will be replaced by a standard Wishbone or AXI bus.

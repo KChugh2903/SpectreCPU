@@ -40,7 +40,7 @@ RUN git clone https://github.com/riscv-collab/riscv-gnu-toolchain.git && \
     cd .. && rm -r riscv-gnu-toolchain
 
 RUN cd /opt && \
-    git clone https://github.com/mathis-s/riscv-isa-sim-SoomRV.git riscv-isa-sim && \
+    git clone https://github.com/mathis-s/riscv-isa-sim-spectre.git riscv-isa-sim && \
     cd riscv-isa-sim &&\
     git checkout 994579ca5898dc7438beb3f47143c1ecb6be1a21 && \
     rm -rf .git && \

@@ -1,7 +1,7 @@
 # Spectre-II
 ## Description
 Spectre-II is a simple superscalar out-of-order RISC-V core able to execute up to 4 instructions per cycle and capable of booting Linux. 
-<img src="https://github.com/mathis-s/SoomRV/assets/39701487/908afb93-b8b7-4bad-80b5-7cc20fa375cf.png" width="800" />
+<img src="https://github.com/mathis-s/spectre/assets/39701487/908afb93-b8b7-4bad-80b5-7cc20fa375cf.png" width="800" />
 
 ## Sample `strcmp` Execution (visualized using [Konata](https://github.com/shioyadan/Konata))
 ![Sample](https://user-images.githubusercontent.com/39701487/229142050-121ed8de-ae9b-4b49-b332-f6c7b5281daf.png)
@@ -35,14 +35,22 @@ end with `.backup`. If cosim is enabled, a matching `.backup_cosim` file will
 be written/read as well.
 
 This is on by default for `make linux`. To restart a crashed or closed Linux boot
+<<<<<<< HEAD
 at the last checkpoint, use e.g. `./obj_dir/VTop spectreii.backup --backup-file=spectreii2.backup`.
+=======
+at the last checkpoint, use e.g. `./obj_dir/VTop spectre.backup --backup-file=spectre2.backup`.
+>>>>>>> 4b7e16f (Makefile modifications)
 (There seem to be some spurious segfaults in the Verilator-generated code.)
 
 ## Documentation
 For a general overview of the implementation, see [Overview](docs/Overview.md).
 
 ## License
+<<<<<<< HEAD
 Spectre-II is released under the MIT License. Use of this source code is governed by a MIT-style license that can be found in the `LICENSE` file.
+=======
+spectre is released under the MIT License. Use of this source code is governed by a MIT-style license that can be found in the `LICENSE` file.
+>>>>>>> 4b7e16f (Makefile modifications)
 
 ### External Source Code
 * `riscv-isa-sim` (aka `Spike`): released under the 3-Clause BSD License, used in conjunction with the simulator.

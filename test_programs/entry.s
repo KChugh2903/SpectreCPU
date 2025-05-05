@@ -1,6 +1,6 @@
 .set IO_ADDR, 0x10000000
 .section .rodata
-.str_boot_msg: .string "SoomRV booting\n"
+.str_boot_msg: .string "spectre booting\n"
 .str_except_msg: .string "Unhandled Exception "
 .section .data
 .reg_buf:

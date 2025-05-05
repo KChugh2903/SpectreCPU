@@ -6,7 +6,7 @@
 #include <cstring>
 #include <string>
 
-// Quick and dirty stub reimplementation of sc_bv for SoomRV simulation. Together with the slang-reflect generated
+// Quick and dirty stub reimplementation of sc_bv for spectre simulation. Together with the slang-reflect generated
 // header file, this is used to unpack structs from raw verilator model data.
 
 template <size_t LEN>

@@ -171,7 +171,7 @@ int SpikeSimif::cosim_instr(const Inst& inst)
     for (auto& model : models)
         modelsPass &= model->PostInst(inst);
 
-    // interrupts are handled by SoomRV
+    // interrupts are handled by spectre
     processor->clear_waiting_for_interrupt();
 
     // TODO: Use this for adjusting WARL behavior
@@ -257,7 +257,7 @@ void SpikeSimif::dump_state(FILE* stream, uint32_t ppc) const
 }
 void SpikeSimif::take_trap(bool interrupt, reg_t cause, reg_t epc, bool delegate)
 {
-    class soomrv_trap_t : public trap_t
+    class spectre_trap_t : public trap_t
     {
       public:
         bool has_tval() override
@@ -268,12 +268,12 @@ void SpikeSimif::take_trap(bool interrupt, reg_t cause, reg_t epc, bool delegate
         {
             return 0;
         }
-        soomrv_trap_t(reg_t which) : trap_t(which)
+        spectre_trap_t(reg_t which) : trap_t(which)
         {
         }
     };
 
-    soomrv_trap_t trap(cause | (interrupt ? 0x80000000 : 0));
+    spectre_trap_t trap(cause | (interrupt ? 0x80000000 : 0));
     processor->take_trap(trap, epc);
 }
 void SpikeSimif::restore_from_top(TopWrapper& wrap, Inst& inst)
