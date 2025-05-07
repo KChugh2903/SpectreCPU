@@ -1,5 +1,5 @@
 # General
-Spectre-II-II is a tag-based OoO architecture. During rename, every instruction that writes to an architectural (i.e. virtual) register is given a tag. This tag is used both as the destination register
+Spectre-II is a tag-based OoO architecture. During rename, every instruction that writes to an architectural (i.e. virtual) register is given a tag. This tag is used both as the destination register
 for the instruction itself, and as a source register for all instructions depending on the computed value. A tag is freed again only once a new instruction writing to the same virtual register commits. The current speculative as well as committed mappings from virtual to physical registers are stored in the [RenameTable](../src/RenameTable.sv).
 
 After instructions are renamed, they await their execution in various issue queues. Within issue queues, availability of instruction operands is tracked using the operands' tags. Once all operands are available, the instruction is issued, even if older instructions are still waiting.
